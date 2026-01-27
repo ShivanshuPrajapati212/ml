@@ -34,10 +34,13 @@ def gradient_descent(now_w, now_b, points, learning_rate):
 
     return w, b
 
+def predict(w, b, wind_speed):
+    return w*wind_speed + b
+
 w = 0
 b = 0
 learning_rate = 0.002
-epoches = 300 
+epoches = 250 
 errors = []
 
 for i in range(epoches):
@@ -58,3 +61,6 @@ x, y = zip(*errors)
 
 plt.plot(x, y)
 plt.show()
+
+
+print("Temperature Pridiction at 12 km/h is:", predict(w, b, 12))
