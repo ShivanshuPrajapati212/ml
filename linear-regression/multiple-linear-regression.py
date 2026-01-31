@@ -106,3 +106,10 @@ plt.grid(True, linestyle='--', alpha=0.6)
 plt.show()
 
 print(data)
+def get_score(y, y_hat):
+    # How much did we miss compared to just guessing the average?
+    ss_res = np.sum((y - y_hat)**2)
+    ss_tot = np.sum((y - np.mean(y))**2)
+    return 1 - (ss_res / ss_tot)
+
+print(f"Model Accuracy (R2): {get_score(y, y_hat) * 100:.2f}%")
