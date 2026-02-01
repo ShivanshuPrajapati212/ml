@@ -63,7 +63,7 @@ X = (X - np.mean(X, axis=0)) / np.std(X, axis=0)
 w = np.zeros(X.shape[1])
 b = 0 
 
-w, b = gradient_descent(X, y, w, b, 0.01, 1000)
+w, b = gradient_descent(X, y, w, b, 0.01, 2000)
 
 y_hat = predict(X, w, b)
 
